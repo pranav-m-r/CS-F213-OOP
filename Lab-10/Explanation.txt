@@ -1,0 +1,21 @@
+Certainly! Below is a design for a parking lot system in Java that utilizes abstract classes and interfaces. This design includes the primary components of a parking lot: ParkingLot, Level, ParkingSpot, and Vehicle. The vehicles and parking spots are categorized based on their size, and the system manages parking vehicles, checking spot availability, and removing vehicles.
+
+*Explanation:*
+
+- *Vehicle*: An abstract class representing a generic vehicle. It includes common properties like licensePlate, spotsNeeded, and size. It also contains methods to park the vehicle in spots and clear spots when the vehicle leaves.
+
+- *Motorcycle, **Car, **Bus*: Concrete classes extending Vehicle. Each overrides the canFitInSpot method based on their size and required spots.
+
+- *VehicleSize*: An enum defining possible vehicle sizes.
+
+- *IParkingSpot*: An interface defining behaviors for a parking spot, such as checking availability, parking a vehicle, and removing a vehicle.
+
+- *ParkingSpot*: Implements IParkingSpot. It represents a parking spot in the parking lot and contains methods to manage parking vehicles.
+
+- *Level*: Represents a floor in the parking lot. It manages a collection of parking spots and provides methods to park vehicles and track available spots.
+
+- *ParkingLot*: The main class that contains multiple levels. It provides a method to park vehicles by attempting to park them in each level.
+
+This design uses *abstract classes* (Vehicle) to represent general concepts that should not be instantiated on their own, and *interfaces* (IParkingSpot) to define contracts for classes (ParkingSpot) that implement specific behaviors.
+
+*Note:* This is a simplified design and can be expanded with additional features such as tracking parked vehicles, handling payments, and more sophisticated spot allocation algorithms.
